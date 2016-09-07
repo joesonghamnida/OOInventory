@@ -20,12 +20,16 @@ public class InventoryItem {
 
     //methods
     public static void createItem() throws Exception{
-        System.out.println("Please enter the item category");
+
+        String[] categories={"Weapon","Food","Clothing","Magic","Earmuffs"};
+        System.out.println("Available categories:");
+        for(int i=0;i<categories.length;i++){
+            System.out.println(categories[i]);
+        }
+
+        System.out.println("Please enter the desired item category");
         String category=InventoryTracker.scanner.nextLine();
         String itemCategory=category;
-
-        //check for appropriate categories
-        String[] categories={"Weapon","Food","Clothing","Magic","EarMuffs"};
 
         System.out.println("Please enter the item name:");
         String itemName = InventoryTracker.scanner.nextLine();
@@ -49,7 +53,7 @@ public class InventoryItem {
                 Magic magic=new Magic(itemName,itemQuantity);
                 InventoryTracker.inventoryList.add(magic);
                 break;
-            case "EarMuffs":
+            case "Earmuffs":
                 EarMuffs earMuffs=new EarMuffs(itemName,itemQuantity);
                 InventoryTracker.inventoryList.add(earMuffs);
             default:
@@ -61,8 +65,6 @@ public class InventoryItem {
     public void printInventory(){
         int i=1;
         for(InventoryItem item:InventoryTracker.inventoryList){
-            //System.out.println(i+". "+"["+item.itemQuant+"] "+item.itemName+" :"+item.category);
-            //i++;
             System.out.printf("%d. [%d] %s :%s\n",i,item.itemQuant,item.itemName,item.category);
             i++;
         }
@@ -88,8 +90,6 @@ public class InventoryItem {
 
         InventoryItem item = new InventoryItem(itemName,itemQuantity,itemCategory);
         InventoryTracker.inventoryList.add(item);
-
-        //need to modify print to printf to accomodate
     }
 
     public void deleteItem(){
