@@ -5,6 +5,5 @@ public class Clothing extends InventoryItem {
 
     public Clothing(String item, int quant){
         super(item, quant,"Clothing");
-
     }
 }

@@ -6,10 +6,4 @@ public class Weapon extends InventoryItem {
     public Weapon(String itemName, int quant){
         super(itemName, quant,"Weapon");
     }
-
-    //overriden methods
-    //@Override
-
-
-    //native methods
 }

@@ -12,14 +12,7 @@ public class InventoryTracker{
     public static void main(String[] args) throws Exception {
 
         InventoryItem item =new InventoryItem("",0,"");
-
-        //need static createItem method here
-
-        //Weapon sword=new Weapon("Sword",1,"Weapon");
-        //Food bread=new Food();
-        //Clothing shirt=new Clothing();
-
-
+        
         while (true) {
             item.printInventory();
             item.printOptions();
