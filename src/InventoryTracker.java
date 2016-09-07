@@ -9,10 +9,10 @@ public class InventoryTracker{
     static ArrayList<InventoryItem> inventoryList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         InventoryItem item =new InventoryItem("",0,"");
-        
+
         while (true) {
             item.printInventory();
             item.printOptions();
@@ -20,7 +20,15 @@ public class InventoryTracker{
 
             switch (choice){
                 case"1":
-                    item.createItem();
+                    boolean catchException=true;
+                    while(catchException) {
+                        try {
+                            item.createItem();
+                            catchException = false;
+                        } catch (Exception e) {
+                            System.out.println("Bad category");
+                        }
+                    }
                     break;
                 case"2":
                     item.addItem();

@@ -18,10 +18,11 @@ public class InventoryItem {
         return itemName;
     }
 
+    static String[] categories={"Weapon","Food","Clothing","Magic","Earmuffs"};
+
     //methods
     public static void createItem() throws Exception{
 
-        String[] categories={"Weapon","Food","Clothing","Magic","Earmuffs"};
         System.out.println("Available categories:");
         for(int i=0;i<categories.length;i++){
             System.out.println(categories[i]);
